@@ -13,6 +13,8 @@ nav ul {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    text-decoration: none;
+    color: #fff;
 }
 
 
@@ -23,6 +25,9 @@ nav ul {
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
+    padding-right: 40px;
+    text-decoration: none;
+    color: #fff;
 }
 
 nav .footer{
@@ -31,4 +36,12 @@ nav .footer{
     flex-direction: row;
     justify-content: space-between;
     list-style-type: none;
+    width: 100%;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.footer li{
+    display: flex;
+    justify-content: space-between;
 }

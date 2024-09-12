@@ -1,14 +1,17 @@
+import { Link } from "react-router-dom"
 const Header = () => {
-    return(
+    return (
         <nav>
+            <ul class="user">
+                <li>ACA VA EL LOGO O NOMBRE <img src="./img/user.jpg" alt="" /></li>
+            </ul>
+
             <ul class="main-nav">
-            <li>Home</li>
-            <li>Favoritos</li>
-            <li>Ver mas</li>
-        </ul>
-        <ul class="user">
-            <li>Nombre usuario <img src="./img/user.jpg" alt="" /></li>
-        </ul>
+                <li><Link to = "/">Home</Link></li>
+                <li><Link to = "/">Favoritos</Link></li>
+                <li><Link to = "/">Seccion 1</Link></li>
+                <li><Link to = "/">Seccion 2</Link></li>
+            </ul>
         </nav>
     )
 }
