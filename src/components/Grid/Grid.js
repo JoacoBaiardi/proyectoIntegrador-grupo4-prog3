@@ -18,14 +18,11 @@ class Grid extends Component {
         }
     }
 
-
-
     componentDidMount() {
         fetch(this.props.url, options)
             .then((response) => response.json())
             .then(data => {
                 console.log(data);
-
                 this.setState({
                     movies: data.results
                 })

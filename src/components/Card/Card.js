@@ -8,12 +8,12 @@ class Card extends Component {
         this.state = { esFavorito: false };
     }
 
-    componentDidMount(){
+    componentDidMount() {
         const storage = localStorage.getItem('favoritos');
-        if(storage !== null){
+        if (storage !== null) {
             const parsedStorage = JSON.parse(storage)
             const estaEnFavoritos = parsedStorage.includes(this.props.id)
-            if(estaEnFavoritos){
+            if (estaEnFavoritos) {
                 this.setState({
                     esFavorito: true
                 })
@@ -28,7 +28,7 @@ class Card extends Component {
             parsedStorage.push(this.props.id)
             const stringStorage = JSON.stringify(parsedStorage)
             localStorage.setItem('favoritos', stringStorage)
-        }else{
+        } else {
             const primerFavorito = [this.props.id]
             const stringStorage = JSON.stringify(primerFavorito)
             localStorage.setItem('favoritos', stringStorage)
@@ -37,10 +37,10 @@ class Card extends Component {
             esFavorito: true
         })
     }
-    quitarFavoritos(){
+    quitarFavoritos() {
         const storage = localStorage.getItem('favoritos')
         const parsedStorage = JSON.parse(storage)
-        const restoFavoritos = parsedStorage.filter(id => id !== this.props.id )
+        const restoFavoritos = parsedStorage.filter(id => id !== this.props.id)
         const stringStorage = JSON.stringify(restoFavoritos)
         localStorage.setItem('favoritos', stringStorage)
         this.setState({
@@ -54,7 +54,7 @@ class Card extends Component {
             <article className='card'>
                 <h2> {title}</h2>
                 <img src={`${image}`} alt="" />
-                <button><Link to={`peliculadetalle/${id}`}>Ver detalle</Link></button>
+                <button><Link to={`pelicula/${id}`}>Ver detalle</Link></button>
                 <button
                     onClick={() => !this.state.esFavorito ? this.agregarAFavoritos() : this.quitarFavoritos()}>
                     {!this.state.esFavorito ? "Agregar a favoritos" : "Quitar de favoritos"}
