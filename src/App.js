@@ -1,14 +1,16 @@
 import Header from "./components/Header/Header"
 import Footer from "./components/Footer/Footer"
+import { Switch, Route } from "react-router-dom"
+import Home from "./pages/Home";
 
 function App() {
 
   return (
     <>
       <Header />
-      <section className='main'>
-        <h1>React</h1>
-      </section>
+      <Switch>
+        <Route exact path="/" component={Home}/>
+      </Switch>
       <Footer />
     </>
   );

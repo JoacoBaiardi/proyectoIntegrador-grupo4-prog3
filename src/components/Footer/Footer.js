@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
         <nav>
-            <ul class="footer">
+            <ul className="footer">
                 <li>Juan Cruz Queirolo</li>
                 <li>Bautista Lignini</li>
                 <li>Joaquin Baiardi</li>
