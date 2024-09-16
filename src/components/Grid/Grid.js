@@ -43,6 +43,7 @@ class Grid extends Component {
                     {this.state.movies.map((data, idx) => (
                         <Card
                             key={idx}
+                            id=  {data.id}
                             title={data.title}
                             image={`https://image.tmdb.org/t/p/w342/${data.poster_path}`}
                         />
