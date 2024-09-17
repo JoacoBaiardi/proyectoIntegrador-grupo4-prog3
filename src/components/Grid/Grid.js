@@ -31,18 +31,17 @@ class Grid extends Component {
 
 
     render() {
+        const moviesToShow = this.state.movies.slice(0, this.props.limit);
         return (
             <>
-                <section className="title">
-                    <h1>{this.props.title}</h1>
-                </section>
                 <section className="gridContainer">
-                    {this.state.movies.map((data, idx) => (
+                    {moviesToShow.map((data, idx) => (
                         <Card
                             key={idx}
                             id=  {data.id}
-                            title={data.title}
                             image={`https://image.tmdb.org/t/p/w342/${data.poster_path}`}
+                            title={data.title}
+                            description={data.overview}
                         />
                     ))}
                 </section>

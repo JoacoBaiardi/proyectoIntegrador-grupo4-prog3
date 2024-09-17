@@ -45,3 +45,7 @@ nav .footer{
     display: flex;
     justify-content: space-between;
 }
+
+.home h2{
+    padding-top: 30px;
+}

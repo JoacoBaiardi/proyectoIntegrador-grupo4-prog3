@@ -5,7 +5,10 @@ import { Component } from "react"
 class Card extends Component {
     constructor(props) {
         super(props);
-        this.state = { esFavorito: false };
+        this.state = { 
+            verDescripcion: false,
+            esFavorito: false 
+        }
     }
 
     componentDidMount() {
@@ -19,6 +22,14 @@ class Card extends Component {
                 })
             }
         }
+    }
+
+    handleVerDescripcion (){
+        this.setState(
+            {
+                verDescripcion: !this.state.verDescripcion
+            }
+        )
     }
 
     agregarAFavoritos() {
@@ -49,11 +60,15 @@ class Card extends Component {
     }
 
     render() {
-        const { title, image, id } = this.props
+        const { title, image, description, id } = this.props
         return (
             <article className='card'>
-                <h2> {title}</h2>
                 <img src={`${image}`} alt="" />
+                <h3> {title}</h3>
+                <div>
+                    {this.state.verDescripcion ? <button onClick={()=> this.handleVerDescripcion()}>Ver Menos</button> : <button onClick={()=> this.handleVerDescripcion()}>Ver Descripcion</button>}
+                </div>
+                <p className={this.state.verDescripcion ? "mostrar" : "ocultar"}>{description}</p>
                 <button><Link to={`pelicula/${id}`}>Ver detalle</Link></button>
                 <button
                     onClick={() => !this.state.esFavorito ? this.agregarAFavoritos() : this.quitarFavoritos()}>

@@ -6,10 +6,12 @@ const Header = () => {
                 <li>ACA VA EL LOGO O NOMBRE <img src="./img/user.jpg" alt="" /></li>
             </ul>
 
+            
+
             <ul className="main-nav">
                 <li><Link to = "/">Home</Link></li>
                 <li><Link to = "/favoritos">Favoritos</Link></li>
-                <li><Link to = "/">Seccion 1</Link></li>
+                <li><Link to = "/populares">Populares</Link></li>
                 <li><Link to = "/">Seccion 2</Link></li>
             </ul>
         </nav>
