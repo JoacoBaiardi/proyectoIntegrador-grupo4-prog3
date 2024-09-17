@@ -25,7 +25,8 @@ class Favoritos extends Component {
     render() {
         return (
             <>
-                <h1>Peliculas Favoritas</h1>
+            <h1>Peliculas Favoritas</h1>
+            <section className="favoritos">
                 {this.state.movies.map((movies, idx) =>
                     <Card
                         key={idx}
@@ -35,6 +36,7 @@ class Favoritos extends Component {
                         description={movies.overview}
                     />
                 )}
+                </section>
             </>
         )
     }

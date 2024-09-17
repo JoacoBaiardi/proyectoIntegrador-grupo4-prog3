@@ -5,9 +5,9 @@ import { Component } from "react"
 class Card extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
             verDescripcion: false,
-            esFavorito: false 
+            esFavorito: false
         }
     }
 
@@ -24,7 +24,7 @@ class Card extends Component {
         }
     }
 
-    handleVerDescripcion (){
+    handleVerDescripcion() {
         this.setState(
             {
                 verDescripcion: !this.state.verDescripcion
@@ -66,7 +66,7 @@ class Card extends Component {
                 <img src={`${image}`} alt="" />
                 <h3> {title}</h3>
                 <div>
-                    {this.state.verDescripcion ? <button onClick={()=> this.handleVerDescripcion()}>Ver Menos</button> : <button onClick={()=> this.handleVerDescripcion()}>Ver Descripcion</button>}
+                    {this.state.verDescripcion ? <button onClick={() => this.handleVerDescripcion()}>Ver Menos</button> : <button onClick={() => this.handleVerDescripcion()}>Ver Descripcion</button>}
                 </div>
                 <p className={this.state.verDescripcion ? "mostrar" : "ocultar"}>{description}</p>
                 <button><Link to={`pelicula/${id}`}>Ver detalle</Link></button>

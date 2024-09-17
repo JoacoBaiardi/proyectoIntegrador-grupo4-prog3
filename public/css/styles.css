@@ -30,6 +30,12 @@ nav ul {
     color: #fff;
 }
 
+.searchForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 nav .footer{
     display: flex;
     flex-wrap: wrap;
@@ -48,4 +54,11 @@ nav .footer{
 
 .home h2{
     padding-top: 30px;
+}
+
+.favoritos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
