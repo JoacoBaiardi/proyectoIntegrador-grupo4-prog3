@@ -10,15 +10,21 @@ class Favoritos extends Component {
     }
 
     componentDidMount() {
-        const storage = localStorage.getItem('favoritos')
+        const storage = localStorage.getItem('favoritos');
         if (storage !== null) {
-            const parsedStorage = JSON.parse(storage)
-            parsedStorage.map(id =>
-                fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=c3dc5448bfaef255452b9ef7be22aa06`).then(response => response.json())
-                    .then(data => this.setState({
-                        movies: [...this.state.movies, data]
-                    }))
-            )
+            const parsedStorage = JSON.parse(storage);
+            const fetchPromises = parsedStorage.map(id =>
+                fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=c3dc5448bfaef255452b9ef7be22aa06`)
+                    .then(response => response.json())
+            );
+
+            Promise.all(fetchPromises)
+                .then(moviesData => {
+                    this.setState({
+                        movies: moviesData
+                    });
+                })
+                .catch(error => console.log(error));
         }
     }
 
