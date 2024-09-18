@@ -56,7 +56,14 @@ nav .footer{
     padding-top: 30px;
 }
 
-.favoritos{
+.favoritos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.SearchRsults {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

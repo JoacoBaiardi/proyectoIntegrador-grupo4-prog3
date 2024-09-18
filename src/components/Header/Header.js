@@ -7,9 +7,7 @@ const Header = () => {
                 <li>ACA VA EL LOGO O NOMBRE <img src="./img/user.jpg" alt="" /></li>
             </ul>
 
-            <section className="searchForm">
-                <Form />
-            </section>
+            
 
             <ul className="main-nav">
                 <li><Link to="/">Home</Link></li>

@@ -1,12 +1,24 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min"
 import Grid from "../components/Grid/Grid"
+import Form from "../components/Form/Form"
+import { Component } from "react"
 
-const Home = () => {
+class Home extends Component{
+
+    constructor(props){
+        super(props)
+    }
+
+    render(){
     return (
         <>
+            <section className="searchForm">
+                <Form history = {this.props.history}/>
+            </section>
             <h1>My App in React</h1>
             <section className="home">
                 <div>
+                
                 <h2>Popular</h2>
                 <p><Link to = "/populares">Ver mas</Link></p>
                 </div>
@@ -26,5 +38,6 @@ const Home = () => {
         </>
 
     )
+}
 }
 export default Home

@@ -1,8 +1,8 @@
 import { Component } from "react"
 
 class Form extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             search: " "
         }
@@ -15,11 +15,23 @@ class Form extends Component {
         )
     }
 
+    handleCancelSubmite(e){
+        e.preventDefault()
+    }
+
+    handelFormSubmit(){
+        this.props.history.push('/search', { search: this.state.search })
+
+    }
+
     render() {
         return (
-            <form>
-                <input onChange={(event) => this.handleNameChange(event)} name="search" value={this.state.inputName} />
-            </form>
+            <div>
+                <form onSubmit={(e)=>this.handleCancelSubmite(e)}>                                         antes estaba psueto input name? 
+                    <input onChange={(event) => this.handleNameChange(event)} name="search" value={this.state.search} />
+                    <button type="submit" onClick={() => this.handelFormSubmit()}>Search</button>
+                </form>
+            </div>
         )
     }
 }
