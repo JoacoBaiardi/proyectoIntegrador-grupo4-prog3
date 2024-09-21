@@ -69,3 +69,11 @@ nav .footer{
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
+.NotFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 30%;
+    margin-bottom: 30%;
+}
