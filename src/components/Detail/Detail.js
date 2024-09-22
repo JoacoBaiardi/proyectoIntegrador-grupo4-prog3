@@ -32,7 +32,7 @@ class Detail extends Component {
         const { movie } = this.state
 
         if (!movie) {
-            return <p>Cargando...</p>;
+            return <p>Loading...</p>;
         }
         return (
             <div>

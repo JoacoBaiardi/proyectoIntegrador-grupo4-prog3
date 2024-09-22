@@ -14,17 +14,23 @@ class Grid extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            movies: []
+            movies: [],
+            isLoading: true
         }
     }
 
     componentDidMount() {
+        this.setState({
+            isLoading: true
+        })
         fetch(this.props.url, options)
             .then((response) => response.json())
             .then(data => {
                 console.log(data);
                 this.setState({
-                    movies: data.results
+                    movies: data.results,
+                    isLoading: false
+
                 })
             })
     }
@@ -34,6 +40,7 @@ class Grid extends Component {
         const moviesToShow = this.state.movies.slice(0, this.props.limit);
         return (
             <>
+                {!this.state.isLoading ? (
                 <section className="gridContainer">
                     {moviesToShow.map((data, idx) => (
                         <Card
@@ -45,6 +52,9 @@ class Grid extends Component {
                         />
                     ))}
                 </section>
+                ) : (
+                    <p>Loading...</p>
+                )}
             </>
         )
     }

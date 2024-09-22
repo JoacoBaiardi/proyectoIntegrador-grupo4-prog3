@@ -5,11 +5,16 @@ class Favoritos extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            movies: []
+            movies: [],
+            isLoading: true
+            
         }
     }
 
     componentDidMount() {
+        this.setState({
+            isLoading: true
+        })
         const storage = localStorage.getItem('favoritos');
         if (storage !== null) {
             const parsedStorage = JSON.parse(storage);
@@ -21,7 +26,8 @@ class Favoritos extends Component {
             Promise.all(fetchPromises)
                 .then(moviesData => {
                     this.setState({
-                        movies: moviesData
+                        movies: moviesData,
+                        isLoading: false
                     });
                 })
                 .catch(error => console.log(error));
@@ -32,6 +38,7 @@ class Favoritos extends Component {
         return (
             <>
             <h1>Peliculas Favoritas</h1>
+            {!this.state.isLoading ? (
             <section className="favoritos">
                 {this.state.movies.map((movies, idx) =>
                     <Card
@@ -43,6 +50,9 @@ class Favoritos extends Component {
                     />
                 )}
                 </section>
+                ) : (
+                    <p>Loading...</p>
+                )}
             </>
         )
     }
