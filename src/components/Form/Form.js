@@ -27,7 +27,7 @@ class Form extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={(e)=>this.handleCancelSubmite(e)}>                                         antes estaba psueto input name? 
+                <form onSubmit={(e)=>this.handleCancelSubmite(e)}> 
                     <input onChange={(event) => this.handleNameChange(event)} name="search" value={this.state.search} />
                     <button type="submit" onClick={() => this.handelFormSubmit()}>Search</button>
                 </form>

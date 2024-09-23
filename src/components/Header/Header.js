@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import Form from "../Form/Form"
+
 const Header = () => {
     return (
         <nav>
@@ -13,7 +13,7 @@ const Header = () => {
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/favoritos">Favoritos</Link></li>
                 <li><Link to="/populares">Populares</Link></li>
-                <li><Link to="/">Seccion 2</Link></li>
+                <li><Link to="/upcoming">Upcoming</Link></li>
             </ul>
         </nav>
     )

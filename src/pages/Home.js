@@ -5,14 +5,11 @@ import { Component } from "react"
 
 class Home extends Component{
 
-    constructor(props){
-        super(props)
-    }
-
     render(){
     return (
         <>
             <section className="searchForm">
+                <h4>Buscar pelicula</h4>
                 <Form history = {this.props.history}/>
             </section>
             <h1>My App in React</h1>

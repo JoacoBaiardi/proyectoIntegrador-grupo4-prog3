@@ -15,6 +15,7 @@ class Grid extends Component {
         super(props)
         this.state = {
             movies: [],
+            page: 1,
             isLoading: true
         }
     }
@@ -23,7 +24,7 @@ class Grid extends Component {
         this.setState({
             isLoading: true
         })
-        fetch(this.props.url, options)
+        fetch(`${this.props.url}&page=${this.state.page}`, options)
             .then((response) => response.json())
             .then(data => {
                 console.log(data);
@@ -35,23 +36,37 @@ class Grid extends Component {
             })
     }
 
+    verMas = () => {
+        this.setState(prevState => ({ page: prevState.page + 1 }), () => {
+            fetch(`${this.props.url}&page=${this.state.page}`, options)
+                .then((response) => response.json())
+                .then(data => {
+                    this.setState(prevState => ({
+                        movies: [...prevState.movies, ...data.results]
+                    }))
+                    console.log(data);
+                })
+        })
+    }
+
 
     render() {
         const moviesToShow = this.state.movies.slice(0, this.props.limit);
         return (
             <>
                 {!this.state.isLoading ? (
-                <section className="gridContainer">
-                    {moviesToShow.map((data, idx) => (
-                        <Card
-                            key={idx}
-                            id=  {data.id}
-                            image={`https://image.tmdb.org/t/p/w342/${data.poster_path}`}
-                            title={data.title}
-                            description={data.overview}
-                        />
-                    ))}
-                </section>
+                    <section className="gridContainer">
+                        {moviesToShow.map((data, idx) => (
+                            <Card
+                                key={idx}
+                                id={data.id}
+                                image={`https://image.tmdb.org/t/p/w342/${data.poster_path}`}
+                                title={data.title}
+                                description={data.overview}
+                            />
+                        ))}
+                        <button onClick={this.verMas}>Load More</button>
+                    </section>
                 ) : (
                     <p>Loading...</p>
                 )}
