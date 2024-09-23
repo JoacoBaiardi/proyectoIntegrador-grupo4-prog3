@@ -36,7 +36,8 @@ class SearchResults extends Component {
                 <h1>Películas Encontradas</h1>
                 {!this.state.isLoading ? (
                     <section className="SearchRsults">
-                        {this.state.movies.map((movie, idx) => (
+                        {this.state.movies.length > 0 ? (
+                        this.state.movies.map((movie, idx) => (
                             <Card
                                 key={idx}
                                 title={movie.title}
@@ -44,7 +45,8 @@ class SearchResults extends Component {
                                 id={movie.id}
                                 description={movie.overview}
                             />
-                        ))}
+                        ))
+                    ) : ( <h2> No se encontro ninguna pelicula con ese nombre </h2>)}
                     </section>
                 ) : (
                     <p>Loading...</p>
