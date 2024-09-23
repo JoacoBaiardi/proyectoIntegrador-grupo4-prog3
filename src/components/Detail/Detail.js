@@ -1,4 +1,5 @@
 import { Component } from "react";
+import FavoritosIcon from "../FavoritosIcon/FavoritosIcon";
 
 const options = {
     method: 'GET',
@@ -44,6 +45,17 @@ class Detail extends Component {
                 <p>{movie.overview}</p>
                 <p><strong>Fecha de lanzamiento:</strong> {movie.release_date}</p>
                 <p><strong>Rating:</strong> {movie.vote_average} / 10</p>
+                <p><strong>Generos:</strong></p>
+                <ul>
+                    {this.state.movie.genres && this.state.movie.genres.length > 0 ? (
+                        this.state.movie.genres.map((genero, idx) => (
+                            <li key={idx}>{genero.name}</li>
+                        ))
+                    ) : (
+                        <li>Cargando géneros...</li>
+                    )}
+                </ul>
+                <FavoritosIcon id={Number (movie.id)} />
             </div>
         );
     }
