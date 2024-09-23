@@ -1,16 +1,62 @@
 import Grid from "../components/Grid/Grid"
+import { Component } from "react"
 
-const Populares = () => {
+export class Populares extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            movies: [],
+            filteredmovies: [],
+            filtervalue: "",
+        };
+    }
+
+    componentDidMount(){
+        fetch('https://api.themoviedb.org/3/movie/popular?language=en-US')
+            .then(response => response.json())
+            .then((data) => {
+                this.setState({
+                    movies: data.results, 
+                    filteredmovies: data.results,
+                });
+            })
+            .catch((error) => console.log(error));
+    }
+
+
+handelFilter(e){
+  const uservalue = e.target.value;
+  this.setState({
+    filtervalue: uservalue,
+    filteredmovies: this.state.movies.filter((movie) => movie.title.toLowerCase().includes(uservalue.toLowerCase()),
+    )
+  });
+}
+
+ handleRestetFilter() {
+    this.setState({
+        filtervalue: "",
+        filteredmovies: this.state.movies,
+    });
+ }
+
+
+    render(){
     return (
         <>
-            <section className="home">
-                <h2>Popular</h2>
-                <Grid
-                    url='https://api.themoviedb.org/3/movie/popular?language=en-US'
-                />
-            </section>
+           <div>
+
+                 <input type = "text" value = {this.state.filtervalue} onChange={(e) => this.handelFilter}></input>
+                 <button onClick={()=> this.handleRestetFilter}> restet filter</button>
+           </div>
+           <Grid 
+           url = {'https://api.themoviedb.org/3/movie/popular?language=en-US'}
+           movie = {this.state.filteredmovies} />
         </>
-        
-    )
-}
+        )
+     }
+    }
+
 export default Populares
