@@ -33,9 +33,11 @@ handelFilter(e){
     filteredmovies: this.state.movies.filter((movie) => movie.title.toLowerCase().includes(uservalue.toLowerCase()),
     )
   });
+  console.log(this.state.filteredmovies);
+  
 }
 
- handleRestetFilter() {
+ handleResetFilter() {
     this.setState({
         filtervalue: "",
         filteredmovies: this.state.movies,
@@ -48,8 +50,8 @@ handelFilter(e){
         <>
            <div>
 
-                 <input type = "text" value = {this.state.filtervalue} onChange={(e) => this.handelFilter}></input>
-                 <button onClick={()=> this.handleRestetFilter}> restet filter</button>
+                 <input type="text" value= {this.state.filtervalue} onChange={(e) => this.handelFilter(e)}></input>
+                 <button onClick={()=> this.handleResetFilter}> reset filter</button>
            </div>
            <Grid 
            url = {'https://api.themoviedb.org/3/movie/popular?language=en-US'}
