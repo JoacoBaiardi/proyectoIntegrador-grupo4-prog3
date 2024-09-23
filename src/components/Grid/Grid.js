@@ -65,7 +65,9 @@ class Grid extends Component {
                                 description={data.overview}
                             />
                         ))}
-                        <button onClick={this.verMas}>Load More</button>
+                        {this.props.limit !== 5 && (
+                          <button onClick={this.verMas}>Ver mas</button>  
+                        )} 
                     </section>
                 ) : (
                     <p>Loading...</p>

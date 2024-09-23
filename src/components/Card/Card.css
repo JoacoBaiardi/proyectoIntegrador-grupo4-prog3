@@ -1,6 +1,8 @@
 .card{
     width: 300px;
     padding-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .card img{
