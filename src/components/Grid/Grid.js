@@ -15,8 +15,10 @@ class Grid extends Component {
         super(props)
         this.state = {
             movies: [],
+            filteredMovies: [],
             page: 1,
-            isLoading: true
+            isLoading: true,
+            filterValue: ""
         }
     }
 
@@ -30,30 +32,65 @@ class Grid extends Component {
                 console.log(data);
                 this.setState({
                     movies: data.results,
-                    isLoading: false
+                    isLoading: false,
+                    filteredMovies: data.results
 
                 })
             })
     }
 
     verMas = () => {
-        this.setState(prevState => ({ page: prevState.page + 1 }), () => {
+        this.setState({ page: this.state.page + 1 }, () => {
             fetch(`${this.props.url}&page=${this.state.page}`, options)
                 .then((response) => response.json())
                 .then(data => {
-                    this.setState(prevState => ({
-                        movies: [...prevState.movies, ...data.results]
-                    }))
+                    this.setState({
+                        movies: this.state.movies.concat(data.results)
+                    });
                     console.log(data);
-                })
-        })
+                });
+        });
+    };
+
+
+    handleFilter = (e) => {
+        const userValue = e.target.value;
+        this.setState({
+            filterValue: userValue,
+            filteredMovies: this.state.movies.filter((movie) =>
+                movie.title.toLowerCase().includes(userValue.toLowerCase())
+            ),
+        });
+        console.log(this.state.filteredMovies);
+
+    }
+
+    handleResetFilter = () => {
+        this.setState({
+            filterValue: "",
+            filteredMovies: this.state.movies,
+        });
     }
 
 
     render() {
-        const moviesToShow = this.state.movies.slice(0, this.props.limit);
+        const moviesToShow = this.state.filteredMovies.slice(0, this.props.limit);
         return (
             <>
+                <div>
+
+                    {this.props.limit !== 5 && (
+                        <>
+                            <input
+                                type="text"
+                                value={this.state.filterValue}
+                                onChange={this.handleFilter}
+                            />
+                            <button onClick={this.handleResetFilter}>Reset Filter</button>
+                        </>
+                    )}
+
+                </div>
                 {!this.state.isLoading ? (
                     <section className="gridContainer">
                         {moviesToShow.map((data, idx) => (
@@ -66,9 +103,10 @@ class Grid extends Component {
                             />
                         ))}
                         {this.props.limit !== 5 && (
-                          <button onClick={this.verMas}>Ver mas</button>  
-                        )} 
+                            <button onClick={this.verMas}>Ver mas</button>
+                        )}
                     </section>
+
                 ) : (
                     <p>Loading...</p>
                 )}
