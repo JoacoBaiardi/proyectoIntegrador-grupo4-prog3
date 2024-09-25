@@ -44,8 +44,14 @@ class Grid extends Component {
             fetch(`${this.props.url}&page=${this.state.page}`, options)
                 .then((response) => response.json())
                 .then(data => {
+                    const updatedMovies = this.state.movies.concat(data.results);
+                    const updatedFilteredMovies = this.state.filterValue
+                        ? this.state.filteredMovies
+                        : updatedMovies;
+
                     this.setState({
-                        movies: this.state.movies.concat(data.results)
+                        movies: updatedMovies,
+                        filteredMovies: updatedFilteredMovies,
                     });
                     console.log(data);
                 });
