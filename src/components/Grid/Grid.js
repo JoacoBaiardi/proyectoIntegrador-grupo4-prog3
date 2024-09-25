@@ -115,7 +115,7 @@ class Grid extends Component {
                                 description={data.overview}
                             />
                         ))}
-                        {this.props.limit !== 5 && (
+                        {this.props.limit !== 5 && this.state.filterValue === "" && (
                             <button onClick={this.verMas}>Ver mas</button>
                         )}
                     </section>
