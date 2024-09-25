@@ -42,11 +42,11 @@ class Favoritos extends Component {
             <section className="favoritos">
                 {this.state.movies.map((movies, idx) =>
                     <Card
-                        key={idx}
-                        title={movies.title}
-                        image={`https://image.tmdb.org/t/p/w342/${movies.poster_path}`}
-                        id={movies.id}
-                        description={movies.overview}
+                    key={idx}
+                    title={movies.title}
+                    image={`https://image.tmdb.org/t/p/w342/${movies.poster_path}`}
+                    id={movies.id}
+                    description={movies.overview}
                     />
                 )}
                 </section>

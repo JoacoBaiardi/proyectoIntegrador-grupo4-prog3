@@ -7,7 +7,7 @@ const Notfound = () => {
         <div className="NotFound">
             <h1>404 No se encontro lo que buscabas</h1>
             <h1><Link to="/"> Volver al Inicio</Link></h1>
-            <iframe src="https://giphy.com/embed/48NwKxvf3zNfdO33rv" width="480" height="360" title="gif 404"  ></iframe>
+            <img src="/img/error-404.png" alt="Error 404" />
         </div>
     )
 

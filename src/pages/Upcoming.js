@@ -1,6 +1,5 @@
 import Grid from "../components/Grid/Grid"
 
-
 const Upcoming = () => {
     return (
         <>
@@ -11,7 +10,6 @@ const Upcoming = () => {
                 />
             </section>
         </>
-        
     )
 }
 export default Upcoming

@@ -88,21 +88,20 @@ class Grid extends Component {
 
                     {this.props.limit !== 5 && (
                         <>
-                            <input
-                                type="text"
-                                value={this.state.filterValue}
-                                onChange={this.handleFilter}
-                            />
-                            <button onClick={this.handleResetFilter}>Reset Filter</button>
-
-                            {moviesToShow.length > 0 ? 
-                            (<p>Se encontaron {moviesToShow.length} peliculas </p>) : 
-                            (<p> No se encontro ninguna pelicula con ese nombre, Quieres <Link to="/"> Volver al Inicio</Link>?</p> 
-                            )}
+                            <div className="filter">
+                                <input
+                                    type="text"
+                                    value={this.state.filterValue}
+                                    onChange={this.handleFilter}
+                                />
+                                <button onClick={this.handleResetFilter}>Reset Filter</button>
+                            </div>
+                            {this.state.filterValue && moviesToShow.length > 0 ?
+                                (<p>Se encontaron {moviesToShow.length} peliculas </p>) : this.state.filterValue && moviesToShow.length === 0 ?
+                                    (<p> No se encontro ninguna pelicula con ese nombre, Quieres <Link to="/"> Volver al Inicio</Link>?</p>
+                                    ) : null}
                         </>
                     )}
-
-
                 </div>
                 {!this.state.isLoading ? (
                     <section className="gridContainer">

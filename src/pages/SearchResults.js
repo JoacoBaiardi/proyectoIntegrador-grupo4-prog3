@@ -38,7 +38,7 @@ class SearchResults extends Component {
                 <h1>Tu busqueda fue: {query} </h1>
                 <h1>Películas Encontradas {mv} </h1>
                 {!this.state.isLoading ? (
-                    <section className="SearchRsults">
+                    <section className="SearchResults">
                         {this.state.movies.length > 0 ? (
                         this.state.movies.map((movie, idx) => (
                             <Card

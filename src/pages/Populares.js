@@ -1,17 +1,16 @@
 import Grid from "../components/Grid/Grid"
-import { Component } from "react"
 
-class Populares extends Component{
-    render(){
+const Populares = () => {
     return (
         <>
-            <Grid
-                url={'https://api.themoviedb.org/3/movie/popular?language=en-US'}
-                movies = {this.props.handlemovies}
+            <section className="home">
+                <h2>Populares</h2>
+                <Grid
+                    url='https://api.themoviedb.org/3/movie/popular?language=en-US'
                 />
+            </section>
         </>
     )
-}
 }
 
 export default Populares

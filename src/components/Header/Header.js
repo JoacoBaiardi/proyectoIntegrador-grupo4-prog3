@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <nav>
             <ul className="user">
-                <li>ACA VA EL LOGO O NOMBRE <img src="./img/user.jpg" alt="" /></li>
+                <li><Link to="/"><img src="./img/pelaFlix.png" alt="PelaFlix" height="50px"/></Link></li>
             </ul>
 
             
