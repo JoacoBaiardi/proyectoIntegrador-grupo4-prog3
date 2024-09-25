@@ -1,16 +1,31 @@
 .card{
-    width: 300px;
-    padding-bottom: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .card img{
-    width: 300px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
 .card h3{
-    margin-top: 5px;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .ocultar{
@@ -19,4 +34,35 @@
 
 .mostrar{
     display: block!important;
+}
+
+.card button {
+    background-color: #ffcc00;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+}
+
+.card button:hover {
+    background-color: #ffaa00;
+}
+
+.card button a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: justify;
+    display: none;
 }

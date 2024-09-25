@@ -1,6 +1,76 @@
 .gridContainer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-left: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px; 
+    padding: 20px;
+    justify-items: center; 
+    margin-bottom: 20px;
+}
+
+.gridContainer button {
+    background-color: #ffcc00;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block; 
+    transition: background-color 0.3s ease;
+}
+
+.gridContainer button:hover {
+    background-color: #ffaa00;
+}
+
+.home {
+    padding: 40px;
+    background-color: #f9f9f9;
+}
+
+.home h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.home p a {
+    color: #ffcc00;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.home p a:hover {
+    color: #ffaa00;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #ffcc00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffaa00;
 }
