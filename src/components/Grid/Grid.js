@@ -94,7 +94,7 @@ class Grid extends Component {
                                     value={this.state.filterValue}
                                     onChange={this.handleFilter}
                                 />
-                                <button onClick={this.handleResetFilter}>Reset Filter</button>
+                                <button className="resetButton" onClick={this.handleResetFilter}>Reset Filter</button>
                             </div>
                             {this.state.filterValue && moviesToShow.length > 0 ?
                                 (<p>Se encontaron {moviesToShow.length} peliculas </p>) : this.state.filterValue && moviesToShow.length === 0 ?
