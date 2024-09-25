@@ -1,5 +1,6 @@
 import { Component } from "react";
 import FavoritosIcon from "../FavoritosIcon/FavoritosIcon";
+import "./Detail.css"
 
 const options = {
     method: 'GET',
@@ -36,17 +37,17 @@ class Detail extends Component {
             return <p>Loading...</p>;
         }
         return (
-            <div>
+            <div className="movie-detail-container">
                 <h1>{movie.title}</h1>
                 <img
                     src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                    alt={movie.title}
-                />
+                    alt={movie.title}/>
+                <div className="movie-info">
                 <p>{movie.overview}</p>
                 <p><strong>Fecha de lanzamiento:</strong> {movie.release_date}</p>
                 <p><strong>Rating:</strong> {movie.vote_average} / 10</p>
                 <p><strong>Generos:</strong></p>
-                <ul>
+                <ul className="genres-list">
                     {this.state.movie.genres && this.state.movie.genres.length > 0 ? (
                         this.state.movie.genres.map((genero, idx) => (
                             <li key={idx}>{genero.name}</li>
@@ -55,7 +56,10 @@ class Detail extends Component {
                         <li>Cargando géneros...</li>
                     )}
                 </ul>
-                <FavoritosIcon id={Number (movie.id)} />
+                </div>
+                <div className="favorites-icon">
+                    <FavoritosIcon id={Number(movie.id)} />
+                </div>
             </div>
         );
     }

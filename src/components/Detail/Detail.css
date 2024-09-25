@@ -1,0 +1,86 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Contenedor Principal */
+.movie-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centra el contenido */
+}
+
+h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center; /* Centra el título */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto 20px; /* Alinea al centro y añade margen inferior */
+    display: block; /* Necesario para centrar imágenes como bloque */
+}
+
+p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Información de la Película */
+.movie-info p {
+    margin: 10px 0;
+}
+
+.movie-info strong {
+    color: #111;
+}
+
+/* Géneros */
+.genres-list {
+    list-style: none;
+    padding: 0;
+}
+
+.genres-list li {
+    display: inline-block;
+    background-color: #eee;
+    color: #333;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* Ícono de Favoritos */
+.favorites-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.favorites-icon button {
+    background-color: #ffcc00;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.favorites-icon button:hover {
+    background-color: #ffaa00;
+}
