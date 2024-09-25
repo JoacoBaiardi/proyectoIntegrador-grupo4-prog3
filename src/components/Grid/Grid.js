@@ -1,6 +1,7 @@
 import { Component } from "react"
 import Card from "../Card/Card"
 import "./Grid.css"
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const options = {
     method: 'GET',
@@ -93,8 +94,14 @@ class Grid extends Component {
                                 onChange={this.handleFilter}
                             />
                             <button onClick={this.handleResetFilter}>Reset Filter</button>
+
+                            {moviesToShow.length > 0 ? 
+                            (<p>Se encontaron {moviesToShow.length} peliculas </p>) : 
+                            (<p> No se encontro ninguna pelicula con ese nombre, Quieres <Link to="/"> Volver al Inicio</Link>?</p> 
+                            )}
                         </>
                     )}
+
 
                 </div>
                 {!this.state.isLoading ? (

@@ -1,5 +1,6 @@
 import { Component } from "react"
 import Card from "../components/Card/Card"
+import { Link } from "react-router-dom/cjs/react-router-dom.min"
 
 class SearchResults extends Component {
     constructor(props) {
@@ -28,12 +29,14 @@ class SearchResults extends Component {
             .catch((error) => console.log(error));
     }
 
-
+    
     render() {
+        const query = this.props.location.state.search;
+        const mv = this.state.movies.length
         return (
             <div>
-                
-                <h1>Películas Encontradas</h1>
+                <h1>Tu busqueda fue: {query} </h1>
+                <h1>Películas Encontradas {mv} </h1>
                 {!this.state.isLoading ? (
                     <section className="SearchRsults">
                         {this.state.movies.length > 0 ? (
@@ -46,7 +49,7 @@ class SearchResults extends Component {
                                 description={movie.overview}
                             />
                         ))
-                    ) : ( <h2> No se encontro ninguna pelicula con ese nombre </h2>)}
+                    ) : ( <h2> No se encontro ninguna pelicula con ese nombre , Quieres <Link to="/"> Volver al Inicio</Link>?</h2>)}
                     </section>
                 ) : (
                     <p>Loading...</p>
