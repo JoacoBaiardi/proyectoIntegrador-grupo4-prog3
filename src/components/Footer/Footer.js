@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <nav>
+        <nav className="footer">
             <ul className="footer">
                 <li>Juan Cruz Queirolo</li>
                 <li>Bautista Lignini</li>

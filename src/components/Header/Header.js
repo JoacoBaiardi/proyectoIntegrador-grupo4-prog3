@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 const Header = () => {
     return (
-        <nav>
+        <nav className="header">
             <ul className="user">
                 <li><Link to="/"><img src="./img/pelaFlix.png" alt="PelaFlix" height="50px"/></Link></li>
             </ul>
