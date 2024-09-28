@@ -18,15 +18,15 @@ h1 {
     font-size: 2rem;
     color: #333;
     margin-bottom: 10px;
-    text-align: center; 
+    text-align: center;
 }
 
 img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    margin: 0 auto 20px; 
-    display: block; 
+    margin: 0 auto 20px;
+    display: block;
 }
 
 p {
@@ -77,4 +77,58 @@ p {
 
 .favorites-icon button:hover {
     background-color: #ffaa00;
+}
+
+@media screen and (max-width: 420px) {
+    .movie-detail-container {
+        padding: 15px;
+        max-width: 100%;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+
+    img {
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .genres-list li {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+        margin: 3px;
+    }
+
+    .favorites-icon button {
+        padding: 8px 12px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .movie-detail-container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    p {
+        font-size: 0.85rem;
+    }
+
+    .genres-list li {
+        font-size: 0.75rem;
+    }
+
+    .favorites-icon button {
+        padding: 6px 10px;
+    }
 }

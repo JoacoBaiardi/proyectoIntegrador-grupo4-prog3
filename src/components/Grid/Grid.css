@@ -1,4 +1,4 @@
-.gridContainer{
+.gridContainer {
     display: grid;
     grid-template-columns: repeat(5, 1fr); 
     gap: 20px; 
@@ -104,4 +104,66 @@ button:hover {
 
 .resetButton:hover {
     background-color: #ffaa00;
+}
+
+
+@media screen and (max-width: 420px) {
+    .gridContainer {
+        grid-template-columns: 1fr; 
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .gridContainer button {
+        padding: 8px 20px; 
+        font-size: 0.9rem;
+    }
+
+    .home h2 {
+        font-size: 1.5rem; 
+    }
+
+    input[type="text"] {
+        width: 180px; 
+    }
+
+    .filterInput {
+        width: 250px; 
+    }
+
+    .resetButton {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+
+@media screen and (max-width: 360px) {
+    .gridContainer {
+        grid-template-columns: 1fr; 
+        gap: 10px;
+        padding: 5px;
+    }
+
+    .gridContainer button {
+        padding: 6px 15px; 
+        font-size: 0.85rem;
+    }
+
+    .home h2 {
+        font-size: 1.3rem; 
+    }
+
+    input[type="text"] {
+        width: 150px; 
+    }
+
+    .filterInput {
+        width: 200px; 
+    }
+
+    .resetButton {
+        padding: 6px 10px; 
+        font-size: 0.85rem;
+    }
 }

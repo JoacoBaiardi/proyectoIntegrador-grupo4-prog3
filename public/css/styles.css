@@ -1,3 +1,7 @@
+body {
+    font-size: 16px;
+}
+
 nav,
 nav.header,
 nav.footer {
@@ -22,8 +26,9 @@ nav ul {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    text-decoration: none;
-    color: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .user {
@@ -41,10 +46,8 @@ nav ul {
     margin: 0 10px;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     align-items: center;
     padding-right: 40px;
-    text-decoration: none;
     color: #fff;
 }
 
@@ -58,7 +61,7 @@ nav ul {
 }
 
 .home-section h2 {
-    padding-top: 0px;
+    padding-top: 0;
     margin-top: 10px;
 }
 
@@ -69,7 +72,7 @@ nav ul {
 }
 
 .searchForm h4 {
-    margin: 0px;
+    margin: 0;
 }
 
 nav .footer {
@@ -103,12 +106,145 @@ nav .footer {
 
 .NotFound {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(../img/gatitos.webp\ la\ que\ va.PNG);
+    font-family: Arial, sans-serif;
+}
+
+.s-Notfound {
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 30%;
-    margin-bottom: 30%;
+    align-items: center;
+    text-align: center;
+    margin: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Fondo blanco para el contenedor */
 }
 
 .titulo {
     margin-top: 50px;
+}
+
+@media screen and (max-width: 420px) {
+    nav,
+    nav.header,
+    nav.footer {
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer {
+        flex-direction: column;
+        padding-right: 20px;
+        padding-left: 20px;
+        align-items: center;
+    }
+
+    .footer li {
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+
+    .main-nav li,
+    .user li {
+        margin: 10px 0;
+        padding-right: 0;
+    }
+
+    .user a {
+        height: 40px;
+        width: 40px;
+    }
+
+    .titulo h1 {
+        font-size: 1.5rem;
+    }
+
+    .home-section {
+        padding-left: 5px;
+    }
+
+    .home-section h2 {
+        margin-top: 5px;
+    }
+
+    .searchForm {
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+    }
+
+    .SearchResults {
+        flex-direction: column;
+    }
+
+    .SearchResults .movie-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .NotFound {
+        margin-left: 0;
+        margin-bottom: 20%;
+    }
+
+    body {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .main-nav li,
+    .user li {
+        margin: 5px 0;
+    }
+
+    .titulo h1 {
+        font-size: 1.3rem;
+    }
+
+    .home-section h2 {
+        margin-top: 5px;
+    }
+
+    .searchForm {
+        padding: 5px;
+    }
+
+    .SearchResults {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    nav.header,
+    nav.footer {
+        padding: 20px 40px;
+    }
+
+    .main-nav li,
+    .user li {
+        margin: 0 20px;
+    }
+
+    .titulo h1 {
+        font-size: 2.5rem;
+    }
 }

@@ -24,7 +24,7 @@ class SearchResults extends Component {
                 this.setState({
                     movies: data.results,
                     isLoading: false
-                }); console.log(data);
+                }); 
             })
             .catch((error) => console.log(error));
     }
