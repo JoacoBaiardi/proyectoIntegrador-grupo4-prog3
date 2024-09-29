@@ -11,15 +11,14 @@ class Form extends Component {
     handleNameChange(event) {
         this.setState({
             search: event.target.value
-        },()=> console.log(this.state.search)
-        )
+        })
     }
 
-    handleCancelSubmite(e){
+    handleCancelSubmite(e) {
         e.preventDefault()
     }
 
-    handelFormSubmit(){
+    handelFormSubmit() {
         this.props.history.push('/search', { search: this.state.search })
 
     }
@@ -27,7 +26,7 @@ class Form extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={(e)=>this.handleCancelSubmite(e)}> 
+                <form onSubmit={(e) => this.handleCancelSubmite(e)}>
                     <input onChange={(event) => this.handleNameChange(event)} name="search" value={this.state.search} />
                     <button type="submit" onClick={() => this.handelFormSubmit()}>Search</button>
                 </form>

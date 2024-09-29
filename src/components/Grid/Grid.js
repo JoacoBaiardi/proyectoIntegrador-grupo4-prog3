@@ -30,7 +30,6 @@ class Grid extends Component {
         fetch(`${this.props.url}&page=${this.state.page}`, options)
             .then((response) => response.json())
             .then(data => {
-                console.log(data);
                 this.setState({
                     movies: data.results,
                     isLoading: false,
@@ -54,11 +53,9 @@ class Grid extends Component {
                         movies: updatedMovies,
                         filteredMovies: updatedFilteredMovies,
                     });
-                    console.log(data);
                 });
         });
     };
-
 
     handleFilter = (e) => {
         const userValue = e.target.value;
@@ -68,8 +65,6 @@ class Grid extends Component {
                 movie.title.toLowerCase().includes(userValue.toLowerCase())
             ),
         });
-        console.log(this.state.filteredMovies);
-
     }
 
     handleResetFilter = () => {
@@ -79,13 +74,11 @@ class Grid extends Component {
         });
     }
 
-
     render() {
         const moviesToShow = this.state.filteredMovies.slice(0, this.props.limit);
         return (
             <>
                 <div>
-
                     {this.props.limit !== 5 && (
                         <>
                             <div className="filter">
@@ -118,7 +111,6 @@ class Grid extends Component {
                             <button onClick={this.verMas}>Ver mas</button>
                         )}
                     </section>
-
                 ) : (
                     <p>Loading...</p>
                 )}

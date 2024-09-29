@@ -12,12 +12,12 @@ class Filter extends Component {
         };
     }
 
-    componentDidMount(){
+    componentDidMount() {
         fetch(`${this.props.url}&page=${this.state.page}`)
             .then(response => response.json())
             .then((data) => {
                 this.setState({
-                    movies: data.results, 
+                    movies: data.results,
                     filteredmovies: data.results,
                 });
             })
@@ -25,34 +25,32 @@ class Filter extends Component {
     }
 
 
-handleFilter(e){
-  const uservalue = e.target.value;
-  this.setState({
-    filtervalue: uservalue,
-    filteredmovies: this.state.movies.filter((movie) => movie.title.toLowerCase().includes(uservalue.toLowerCase()),
-    )
-  });
-  console.log(this.state.filteredmovies);
-  
-}
+    handleFilter(e) {
+        const uservalue = e.target.value;
+        this.setState({
+            filtervalue: uservalue,
+            filteredmovies: this.state.movies.filter((movie) => movie.title.toLowerCase().includes(uservalue.toLowerCase()),
+            )
+        });
+    }
 
- handleResetFilter() {
-    this.setState({
-        filtervalue: "",
-        filteredmovies: this.state.movies,
-    });
- }
- render(){
-    return (
-        <>
-           <div>
+    handleResetFilter() {
+        this.setState({
+            filtervalue: "",
+            filteredmovies: this.state.movies,
+        });
+    }
+    render() {
+        return (
+            <>
+                <div>
 
-                 <input type="text" value= {this.state.filtervalue} onChange={(e) => this.handleFilter(e)}></input>
-                 <button onClick={()=> this.handleResetFilter()}> reset filter</button>
-           </div>
-        </>
-    )
-}
+                    <input type="text" value={this.state.filtervalue} onChange={(e) => this.handleFilter(e)}></input>
+                    <button onClick={() => this.handleResetFilter()}> reset filter</button>
+                </div>
+            </>
+        )
+    }
 }
 
 export default Filter

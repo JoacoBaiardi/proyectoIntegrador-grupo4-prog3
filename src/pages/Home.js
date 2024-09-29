@@ -16,13 +16,10 @@ class Home extends Component {
                     <Form history={this.props.history} />
                 </div>
                 <section className="home">
-                    <section className=""></section>
                     <div className="home-section">
                         <h2>Popular</h2>
                         <p><Link to="/populares">Ver mas</Link></p>
                     </div>
-
-
                     <Grid
                         url='https://api.themoviedb.org/3/movie/popular?language=en-US&page=1'
                         limit={5}

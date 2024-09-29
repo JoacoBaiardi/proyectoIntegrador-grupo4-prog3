@@ -23,7 +23,6 @@ class Detail extends Component {
         fetch(`https://api.themoviedb.org/3/movie/${id}`, options)
             .then((response) => response.json())
             .then(data => {
-                console.log(data);
                 this.setState({
                     movie: data,
                 })
