@@ -79,7 +79,7 @@ p {
     background-color: #ffaa00;
 }
 
-@media screen and (max-width: 420px) {
+@media (max-width: 420px) {
     .movie-detail-container {
         padding: 15px;
         max-width: 100%;
@@ -111,7 +111,7 @@ p {
     }
 }
 
-@media screen and (max-width: 360px) {
+@media (max-width: 360px) {
     .movie-detail-container {
         padding: 10px;
     }

@@ -131,7 +131,7 @@ nav .footer {
     margin-top: 50px;
 }
 
-@media screen and (max-width: 420px) {
+@media (max-width: 420px) {
     nav,
     nav.header,
     nav.footer {
@@ -206,7 +206,7 @@ nav .footer {
     }
 }
 
-@media screen and (max-width: 360px) {
+@media (max-width: 360px) {
     nav ul {
         flex-direction: column;
     }
@@ -233,7 +233,7 @@ nav .footer {
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
     nav.header,
     nav.footer {
         padding: 20px 40px;
