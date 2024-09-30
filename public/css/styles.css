@@ -92,9 +92,12 @@ nav .footer {
 }
 
 .favoritos {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 20px; 
+    padding: 20px;
+    justify-items: center; 
+    margin-bottom: 20px;
 }
 
 .SearchResults {
@@ -109,7 +112,6 @@ nav .footer {
     justify-content: center;
     align-items: center;
     margin: 0;
-    background-image: url(../img/gatitos.webp\ la\ que\ va.PNG);
     font-family: Arial, sans-serif;
 }
 
@@ -123,7 +125,7 @@ nav .footer {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    background-color: #fff; /* Fondo blanco para el contenedor */
+    background-color: #fff;
 }
 
 .titulo {

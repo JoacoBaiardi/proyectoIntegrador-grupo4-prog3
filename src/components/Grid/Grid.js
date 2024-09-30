@@ -112,7 +112,7 @@ class Grid extends Component {
                         )}
                     </section>
                 ) : (
-                    <p>Loading...</p>
+                    <div className="loader"></div>
                 )}
             </>
         )
