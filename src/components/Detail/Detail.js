@@ -33,7 +33,7 @@ class Detail extends Component {
         const { movie } = this.state
 
         if (!movie) {
-            return <p>Loading...</p>;
+            return <div className="loader"></div>
         }
         return (
             <div className="movie-detail-container">

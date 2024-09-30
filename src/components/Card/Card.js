@@ -27,9 +27,11 @@ class Card extends Component {
                 <img src={`${image}`} alt="" />
                 <h3> {title}</h3>
                 <div>
-                    {this.state.verDescripcion ? <button onClick={() => this.handleVerDescripcion()}>Ver Menos</button> : <button onClick={() => this.handleVerDescripcion()}>Ver Descripcion</button>}
-                </div>
-                <p className={this.state.verDescripcion ? "mostrar" : "ocultar"}>{description}</p>
+                    {this.state.verDescripcion ?
+                        <button onClick={() => this.handleVerDescripcion()}>Ver Menos</button> :
+                        <button onClick={() => this.handleVerDescripcion()}>Ver Descripcion</button>}
+                    </div>
+                    <p className={this.state.verDescripcion ? "mostrar" : "ocultar"}>{description}</p>
                 <button><Link to={`pelicula/${id}`}>Ver detalle</Link></button>
                 <FavoritosIcon id={id} />
             </article>

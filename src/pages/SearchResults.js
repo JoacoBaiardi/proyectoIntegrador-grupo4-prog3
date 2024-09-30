@@ -24,12 +24,12 @@ class SearchResults extends Component {
                 this.setState({
                     movies: data.results,
                     isLoading: false
-                }); 
+                });
             })
             .catch((error) => console.log(error));
     }
 
-    
+
     render() {
         const query = this.props.location.state.search;
         const mv = this.state.movies.length
@@ -40,21 +40,21 @@ class SearchResults extends Component {
                 {!this.state.isLoading ? (
                     <section className="SearchResults">
                         {this.state.movies.length > 0 ? (
-                        this.state.movies.map((movie, idx) => (
-                            <Card
-                                key={idx}
-                                title={movie.title}
-                                image={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
-                                id={movie.id}
-                                description={movie.overview}
-                            />
-                        ))
-                    ) : ( <h2> No se encontro ninguna pelicula con ese nombre , Quieres <Link to="/"> Volver al Inicio</Link>?</h2>)}
+                            this.state.movies.map((movie, idx) => (
+                                <Card
+                                    key={idx}
+                                    title={movie.title}
+                                    image={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
+                                    id={movie.id}
+                                    description={movie.overview}
+                                />
+                            ))
+                        ) : (<h2> No se encontro ninguna pelicula con ese nombre , Quieres <Link to="/"> Volver al Inicio</Link>?</h2>)}
                     </section>
                 ) : (
-                    <p>Loading...</p>
+                    <div className="loader"></div>
                 )}
-            
+
             </div>
         );
     }

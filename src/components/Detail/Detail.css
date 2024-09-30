@@ -5,13 +5,18 @@ body {
 }
 
 .movie-detail-container {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 400px;
+    max-height: 800px;
+    margin: 20px auto;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+}
+
+.movie-detail-container img{
+    height: 300px;
 }
 
 h1 {

@@ -51,7 +51,7 @@ class Favoritos extends Component {
                 )}
                 </section>
                 ) : (
-                    <p>Loading...</p>
+                    <div className="loader"></div>
                 )}
             </>
         )

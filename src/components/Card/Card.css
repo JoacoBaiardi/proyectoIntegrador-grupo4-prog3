@@ -14,6 +14,13 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+.card p {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: justify;
+    display: none;
+}
+
 .card img{
     max-width: 100%;
     height: auto;
@@ -29,11 +36,11 @@
 }
 
 .ocultar{
-    display: none!important;
+    display: none !important;
 }
 
 .mostrar{
-    display: block!important;
+    display: block !important;
 }
 
 .card button {
@@ -60,9 +67,4 @@
     font-weight: bold;
 }
 
-.card p {
-    font-size: 0.9rem;
-    color: #666;
-    text-align: justify;
-    display: none;
-}
+
