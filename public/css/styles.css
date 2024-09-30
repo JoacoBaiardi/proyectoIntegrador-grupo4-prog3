@@ -246,18 +246,3 @@ nav .footer {
     }
 }
 
-@media (min-width: 1024px) {
-    nav.header,
-    nav.footer {
-        padding: 20px 40px;
-    }
-
-    .main-nav li,
-    .user li {
-        margin: 0 20px;
-    }
-
-    .titulo h1 {
-        font-size: 2.5rem;
-    }
-}
